@@ -5,17 +5,17 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-@Client.on_message(filters.command('دەستپێکردن'))
+@Client.on_message(filters.command('start'))
 async def start(c, m):
     owner = await c.get_users(int(Config.OWNER_ID))
     owner_username = owner.username if owner.username else 'bnyaminali'
 
     # start text
-    text = f"""Hey! {m.from_user.mention(style='md')},
+    text = f"""سڵاو! {m.from_user.mention(style='md')},
 
-💡 ** I am Stylish Font Bot**
+💡 ** من بۆتی تیکستەکانم**
 
-`I can help you to get stylish fonts. Just send me some text and see magic.`
+`من دەتوانم یارمەتیت بدەم بۆ بەدەستهێنانی فۆنتێکی جوان. تەنها تێکستێکم بۆ بنێرە و جادوەکە ببینە..`
 
 **👲 Maintained By:** ▷ {owner.mention(style='md')}
 """
